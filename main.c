@@ -71,7 +71,7 @@ void add()      /*图书信息录入*/
 	fflush(stdin);/*屏幕停留*/ 
 	while(y)
 	{ 
-		printf("\t请输入书号:");
+		printf("\t请输入书号(只能输入数字):");
 		scanf("%s",library.book[library.count].num);
 		printf("\t请输入书名:");
 		scanf("%s",library.book[library.count].bname);
@@ -100,19 +100,14 @@ void lookup()  /*图书信息浏览*/
 	int i;
 	system("cls");/*清屏*/
 	for (i=0;i<library.count;i++)
-	{
-		printf("书号: \n");
-		printf("%s\n",library.book[i].num);
-		printf("图书名: \n");
-		printf("%s\n",library.book[i].bname);
-		printf("作者名: \n");
-		printf("%s\n",library.book[i].wname);
-		printf("出版单位: \n");
-		printf("%s\n",library.book[i].publish);
-		printf("出版时间: \n");
-		printf("%s\n",library.book[i].putime);
-		printf("价格: \n");
-		printf("%6.2lf\n",library.book[i].price);
+	{	
+		printf("\n\n\n\n\n\t\t\t\t图书信息浏览\t\t\t\t\n");
+		printf("\n\n\t\t\t1.--------书号: %s--------\n",library.book[i].num);
+		printf("\t\t\t2.--------图书名: %s--------\n",library.book[i].bname);
+		printf("\t\t\t3.--------作者名: %s--------\n",library.book[i].wname);
+		printf("\t\t\t4.--------出版单位: %s--------\n",library.book[i].publish);
+		printf("\t\t\t5.--------出版时间: %s--------\n",library.book[i].putime);
+		printf("\t\t\t6.--------价格: %6.2lf--------\n",library.book[i].price);
 	}
 	printf("已到达文档尾，请按任意键返回\n") ;
 	fflush(stdin);
@@ -129,18 +124,13 @@ void search_by_name()          /*按书名查询*/
 	if(strcmp(s2,library.book[i].bname)==0)
 	{  
 		flag=0;
-		printf("书号: \n");
-		printf("%s\n",library.book[i].num);
-		printf("书名: \n");
-		printf("%s\n",library.book[i].bname);
-		printf("作者名: \n");
-		printf("%s\n",library.book[i].wname);
-		printf("出版单位: \n");
-		printf("%s\n",library.book[i].publish);
-		printf("出版时间: \n");
-		printf("%s\n",library.book[i].putime);
-		printf("价格: \n");
-		printf("%6.2lf\n",library.book[i].price);
+	printf("\n\n\n\n\n\t\t\t\t图书信息浏览\t\t\t\t\n");
+		printf("\n\n\t\t\t1.--------书号: %s--------\n",library.book[i].num);
+		printf("\t\t\t2.--------图书名: %s--------\n",library.book[i].bname);
+		printf("\t\t\t3.--------作者名: %s--------\n",library.book[i].wname);
+		printf("\t\t\t4.--------出版单位: %s--------\n",library.book[i].publish);
+		printf("\t\t\t5.--------出版时间: %s--------\n",library.book[i].putime);
+		printf("\t\t\t6.--------价格: %6.2lf--------\n",library.book[i].price);
 		getchar();
 		break;
 	} 
@@ -161,18 +151,13 @@ void search_by_author()/*按作者名查询*/
 	if(strcmp(s3,library.book[i].wname)==0)
 	{  
 		flag=0;
-		printf("书号: \n"); 
-		printf("%s\n",library.book[i].num);
-		printf("书名: \n");
-		printf("%s\n",library.book[i].bname);
-		printf("作者名: \n");
-		printf("%s\n",library.book[i].wname);
-		printf("出版单位: \n");
-		printf("%s\n",library.book[i].publish);
-		printf("出版时间: \n");
-		printf("%s\n",library.book[i].putime);
-		printf("价格: \n");
-		printf("%6.2lf\n",library.book[i].price);
+		printf("\n\n\n\n\n\t\t\t\t图书信息浏览\t\t\t\t\n");
+		printf("\n\n\t\t\t1.--------书号: %s--------\n",library.book[i].num);
+		printf("\t\t\t2.--------图书名: %s--------\n",library.book[i].bname);
+		printf("\t\t\t3.--------作者名: %s--------\n",library.book[i].wname);
+		printf("\t\t\t4.--------出版单位: %s--------\n",library.book[i].publish);
+		printf("\t\t\t5.--------出版时间: %s--------\n",library.book[i].putime);
+		printf("\t\t\t6.--------价格: %6.2lf--------\n",library.book[i].price);
 		getchar();
 		break;
 	} 
@@ -213,7 +198,7 @@ void del()                   /*图书信息删除*/
 	int i,in;
 	system("cls");            /*清屏*/
 	printf("\n   请输入你想删除的图书号:");
-	scanf("%s",number);
+	scanf("%d",number);
 	printf("\t你确定删除此条信息吗？\n");
 	printf("\t1.是 2.否\n");
 	scanf("%d",&in); 
